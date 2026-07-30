@@ -9,22 +9,7 @@ Author: TerraScore
 
 import ee
 import pandas as pd
-import os
-from dotenv import load_dotenv
-
-
-# =====================================================
-# ------------------ ENV SETUP -------------------------
-# =====================================================
-
-load_dotenv()
-
-PROJECT_ID = os.getenv("PROJECT_ID")
-
-if not PROJECT_ID:
-    raise ValueError("PROJECT_ID not found in .env file")
-
-ee.Initialize(project=PROJECT_ID)
+from backend.utils.earth_engine import initialize_earth_engine
 
 
 # =====================================================
@@ -44,6 +29,9 @@ def get_ndvi_data(lat: float, lon: float, start_date: str, end_date: str) -> pd.
     Returns:
         pd.DataFrame: date, ndvi (0–1), lat, lon
     """
+
+    if not initialize_earth_engine():
+        raise RuntimeError("Google Earth Engine initialization failed. Verify PROJECT_ID and Earth Engine access before requesting NDVI data.")
 
     try:
         # ---------- Geometry ----------
