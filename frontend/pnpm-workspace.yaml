@@ -1,0 +1,5 @@
+allowBuilds:
+  esbuild: true
+# This PNPM workspace policy permits Vite's required esbuild post-install binary.
+onlyBuiltDependencies:
+  - esbuild

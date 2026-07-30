@@ -1,0 +1,18 @@
+/* This stylesheet provides the shared TerraScore visual system, inspired by the
+   approachable, agriculture-first presentation used by AgriShield. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #1f2937; background: #f7faf7; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #f7faf7; }
+button, input, select { font: inherit; }
+.card { @apply rounded-2xl border border-emerald-100 bg-white shadow-lg shadow-emerald-950/5; }
+.field { @apply mt-1 w-full rounded-xl border border-emerald-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20; }
+.label { @apply text-sm font-medium text-slate-700; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-emerald-500/40 disabled:cursor-not-allowed disabled:opacity-50; }
+.btn-primary { @apply btn bg-emerald-600 text-white shadow-md shadow-emerald-700/20 hover:bg-emerald-700; }
+.btn-secondary { @apply btn border border-emerald-200 bg-white text-emerald-800 hover:bg-emerald-50; }
+.page-title { @apply text-2xl font-bold tracking-tight text-slate-900; }

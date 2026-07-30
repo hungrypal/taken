@@ -1,0 +1,32 @@
+# Python
+.venv/
+gee_env/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.env.*
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Frontend build
+frontend/dist/
+dist/
+build/
+.next/
+
+# Package caches
+.pnpm-store/
+
+# Logs
+logs/
+*.log
+
+# Models
+models/*.joblib
+
+# OS
+.DS_Store

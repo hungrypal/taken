@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - terrascore_data:/app/data
+      - terrascore_logs:/app/logs
+    environment:
+      DATABASE_URL: sqlite:////app/data/terrascore.db
+      ENVIRONMENT: development
+
+volumes:
+  terrascore_data:
+  terrascore_logs:

@@ -1,0 +1,9 @@
+.git
+.env
+.venv
+gee_env
+__pycache__
+*.pyc
+logs
+terrascore.db*
+models/*.joblib

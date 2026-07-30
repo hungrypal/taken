@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: terrascore-api
+    runtime: docker
+    healthCheckPath: /
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: JWT_SECRET_KEY
+        generateValue: true
