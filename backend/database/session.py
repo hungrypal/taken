@@ -32,13 +32,8 @@ def get_db() -> Generator[Session, None, None]:
 
 
 def init_database() -> None:
-    """Create tables for first-run local deployments.
-
-    Production systems deliberately skip this shortcut and must use versioned
-    Alembic migrations before application startup.
-    """
-    if settings.environment in {"production", "prod"}:
-        return
+    # Import all models before metadata is evaluated.
+    
 
     # Import all models before metadata is evaluated. In production, prefer
     # Alembic migrations; this keeps a fresh SQLite developer setup usable.
